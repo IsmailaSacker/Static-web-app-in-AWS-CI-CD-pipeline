@@ -6,7 +6,7 @@ Hosting website that is not only dynamic but also scalable and reliable is cruci
 
 In this project, you will create a continuous delivery pipeline for a static web application hosted on Amazon S3 for storage and AWS CloudFront for content delivery to automate the deployment process, ensuring that updates to our website are delivered seamlessly to users. A provided index.htlm file that contains the codes will be used in the project.
 
-## Application architecture
+### Application architecture
 
 - The following diagram provides a visual representation of the services used in this tutorial and how they are connected. This application uses GitHub, AWS S3, CloudFront, Route 53, and AWS CodePipeline.
 
