@@ -12,7 +12,7 @@ In this project, you will create a continuous delivery pipeline for a static web
 
 As we go through this project, we will discuss the services in detail and point to resources that will help you get up to speed with them.
 
-![Alt text](static-web-hosting.png)
+![Alt text](static1-web-hosting.png)
 
 DNS services is crucial for directing users to your website, and ensuring proper configuration and strengthening account security with robust authentication methods like multi-factor authentication (MFA) is essential.
 
@@ -79,18 +79,18 @@ This project is divided into six short modules. You must complete each module in
 - Click "Create Bucket".
 
 - Naviagte to the "Properties" tab of the bucket to enable static web hosting by scrolling down to the end.
-  ![Alt text](s3_web_site_hosting.PNG)
+  ![Alt text](/images/s3_web_site_hosting.PNG)
 
 **Step 2 - Upload html file**
 
 - Upload the provided html file to the bucket you created.
-  ![Alt text](s3_bucket.PNG)
+  ![Alt text](/images/s3_bucket.PNG)
 
 - Navigate to the bucket properties again to copy S3 endpoint URL. This URL will be use to configure the cloudFront later in the steps.
 
 **Note: bucket policy will be note in the next module after CloudFront distribution is created**
 
-2. **### Module 2: Serve the Web site on CloudFront**
+2. **Module 2: Serve the Web site on CloudFront**
 
 #### Accomplishments:
 
@@ -112,18 +112,18 @@ This project is divided into six short modules. You must complete each module in
 - Name will be auto-populated.
 
 - In the "origin access" we select "legacy access identity" for this project because we want to create a bucket policy in S3 by creating OAI for the endpoint.
-  ![Alt text](cloudfront1.PNG)
+  ![Alt text](/images/cloudfront1.PNG)
 
 - Select "Redirect HTTP to HTTPS" for the Viewer Protocol Policy
-  ![Alt text](cloudfront2.PNG)
+  ![Alt text](/images/cloudfront2.PNG)
 
 - For Cache key and origin requests, to ensure any changes made to frontend code are reflected immediately and not after 24 hours, we shall select the default option "Cache policy and origin request policy (recommended)". For Cache policy, we shall select "Caching Disabled"
-  ![Alt text](cloudfront3.PNG)
+  ![Alt text](/images/cloudfront3.PNG)
 
 - Disable WAF firewall
 
 - "Alternate domain name (CNAME)," add your domain name
-  ![Alt text](cloudfront4.PNG)
+  ![Alt text](/images/cloudfront4.PNG)
 
 - Traffic to be encrypted via HTTPS for more secure connections. For this reason, we shall request a Custom SSL certificate. Click "Request Certificate".
 
@@ -145,7 +145,7 @@ This project is divided into six short modules. You must complete each module in
 - Navigate to Route53 and click on "Domain register.
   This step will be done in Module 3.
 
-3. **###Module 3: Register a domain and redirect to the web application**
+3. **Module 3: Register a domain and redirect to the web application**
 
 #### Accomplishments:
 
@@ -165,22 +165,22 @@ This project is divided into six short modules. You must complete each module in
 - Navigate to Route53 and click on "Domain register.
 - Enter the preferred name and click on search. If the preferred name is available i will be given to you.
 - Use any of the preferred one for you wants. for the seek of this project we use the .click domain because it's the cheapest.
-  ![Alt text](route53_domain.PNG)
+  ![Alt text](/images/route53_domain.PNG)
 
 **Step 2 - Hosted Zone**
 
 - Navigate to hosted zone and you will see a hosted zone created for you automatically by the creation of the domain
-  ![Alt text](rout53_hostedzone.PNG)
+  ![Alt text](/images/rout53_hostedzone.PNG)
 - click on it and you will see a newly created record with the type NS and SOA.
 - Now we create 3 more records to handle the trafic from users and direct it to cloudFront.
 - We create A records handle route traffic of IPv4
-  ![Alt text](route53_A.PNG)
+  ![Alt text](/images/route53_A.PNG)
   - We create A records handle route traffic of IPv6
-    ![Alt text](route53_AAA.PNG)
+    ![Alt text](/images/route53_AAA.PNG)
   - We create A record to enable the cerficate of https to the domain
-    ![Alt text](route53_cname.PNG)
+    ![Alt text](/images/route53_cname.PNG)
 
-4. **### Module 4: Set Up Git Repo : Set up a GitHub repository to deploy the web application when changes are made.**
+4. **Module 4: Set Up Git Repo : Set up a GitHub repository to deploy the web application when changes are made.**
 
 #### Accomplishments:
 
@@ -196,9 +196,9 @@ This project is divided into six short modules. You must complete each module in
 
 - Create a repository
 - upload the provided html file to the created html
-  ![Alt text](github.PNG)
+  ![Alt text](/images/github.PNG)
 
-5. **### Module 5: Implement a CI/CD pipeline using Git and CodePipeline for automatic deployments.**
+5. **Module 5: Implement a CI/CD pipeline using Git and CodePipeline for automatic deployments.**
 
 #### Accomplishments:
 
@@ -216,18 +216,18 @@ This project is divided into six short modules. You must complete each module in
 
 - AWS Management Console. Navigate to CodePipeline. Click "Create Pipeline".
 - Enter name and configure as below.
-  ![Alt text](pipeline1.PNG)
+  ![Alt text](/images/pipeline1.PNG)
 
 - Connect the source provider to using github and configure like below
-  ![Alt text](pipeline2.PNG)
+  ![Alt text](/images/pipeline2.PNG)
 
 - Skip the build stage.
 
 - Add the deploy stage and configure like below
-  ![Alt text](pipeline3.PNG)
+  ![Alt text](/images/pipeline3.PNG)
 
 - Pipeline is created, each time you make changes to your front-end code and push these changes to GitHub, the AWS CodePipeline automatically detects these changes. Go ahead and make changes to some of the CSS coloring of the sample website. You should see it reflected immediately on your website.
-  ![Alt text](pipeline4.PNG)
+  ![Alt text](/images/pipeline4.PNG)
 
 ### Module 6: Security Analysis & Cost Analysis
 
