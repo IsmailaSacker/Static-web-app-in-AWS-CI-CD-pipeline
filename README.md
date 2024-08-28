@@ -48,7 +48,7 @@ Integrating GitHub with AWS CodePipeline streamlines deployment processes, autom
 This project is divided into six short modules. You must complete each module in order before moving on to the next one.
 
 - Deploy Web App to the cloud storage(S3)
-- Server the Web site on CloudFront
+- Serve the Web site on CloudFront
 - Register a domain and redirect to the web application
 - Set Up Git Repo : Set up a GitHub repository to deploy the web application when changes are made.
 - Implement a CI/CD pipeline using Git and CodePipeline for automatic deployments.
